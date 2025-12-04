@@ -1,0 +1,12 @@
+com\example\platinumduel\DuelManager$RequestResult.class
+com\example\platinumduel\Messages.class
+com\example\platinumduel\DuelManager$AcceptResult.class
+com\example\platinumduel\DuelCommand$1.class
+com\example\platinumduel\DuelManager$DeclineResult.class
+com\example\platinumduel\PlatinumDuelPlugin.class
+com\example\platinumduel\DuelCommand.class
+com\example\platinumduel\DuelManager.class
+com\example\platinumduel\DuelManager$DuelRequest.class
+com\example\platinumduel\DuelListener.class
+com\example\platinumduel\DuelManager$1.class
+com\example\platinumduel\DuelManager$DuelEndReason.class

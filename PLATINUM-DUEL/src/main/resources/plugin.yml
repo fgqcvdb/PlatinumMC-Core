@@ -1,0 +1,20 @@
+name: PlatinumDuel
+main: com.example.platinumduel.PlatinumDuelPlugin
+version: ${project.version}
+api-version: 1.21
+description: Force players to agree to duels before they can PvP.
+author: CursorAgent
+
+commands:
+  duel:
+    description: Challenge players to mutually agreed PvP duels.
+    usage: /<command> <player|accept|decline|cancel>
+    permission: platinumduel.duel
+
+permissions:
+  platinumduel.duel:
+    description: Allows a player to create and manage duels.
+    default: true
+
+
+

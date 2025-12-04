@@ -1,0 +1,15 @@
+name: RewardsPlugin
+main: com.platinumcore.rewards.RewardsPlugin
+version: ${project.version}
+api-version: 1.20
+description: Opens a rewards GUI with custom items.
+commands:
+  rewards:
+    description: Open the rewards menu.
+    usage: /<command>
+    permission: rewards.use
+permissions:
+  rewards.use:
+    description: Allows players to open the rewards menu.
+    default: true
+

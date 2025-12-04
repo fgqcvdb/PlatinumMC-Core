@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.platinumcore'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
+    }
+    maven {
+        name = 'sonatype-oss'
+        url = uri('https://oss.sonatype.org/content/repositories/snapshots/')
+    }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.processResources {
+    filteringCharset = 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand(
+                version: project.version
+        )
+    }
+}
+
+tasks.jar {
+    archiveFileName = "RewardsPlugin-${project.version}.jar"
+}
+
+tasks.register('copyPlugin', Copy) {
+    dependsOn tasks.named('jar')
+    from tasks.named('jar')
+    into layout.buildDirectory.dir('plugin')
+}
+
+
